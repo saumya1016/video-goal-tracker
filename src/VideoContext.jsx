@@ -9,10 +9,10 @@ export function VideoProvider({ children }) {
   });
 
   const toggleAutoPlay = () =>
-    setVideoSettings(prev => ({ ...prev, autoPlay: !prev.autoPlay }));
+    setVideoSettings({ ...videoSettings, autoPlay: !videoSettings.autoPlay });
 
   const updateVolume = volume =>
-    setVideoSettings(prev => ({ ...prev, volume }));
+    setVideoSettings({ ...videoSettings, volume });
 
   return (
     <VideoContext.Provider value={{ videoSettings, toggleAutoPlay, updateVolume }}>
